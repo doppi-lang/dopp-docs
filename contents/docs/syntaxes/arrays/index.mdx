@@ -54,7 +54,7 @@ chiqar(a);  // Arrayni chiqaradi, natija: [12, 34]
 **Natija:**
 
 ```
-[12, 34, 56, <bo'sh />, <bo'sh />]
+[12, 34, 56, <2 ta bo'sh />]
 5
 [12, 34, 56, 78, <bo'sh />]
 [12, 34, 56, 78]
@@ -62,7 +62,17 @@ chiqar(a);  // Arrayni chiqaradi, natija: [12, 34]
 [12, 34, 56]
 [12, 34]
 ```
-
+### Arrayni ma'lum chegarada kesib olish
+Array elementlarni ma'lum chegarada kesib olish uchun quyidagi usuldan foydalanamiz.
+```js
+yarat a[5] := [12, 34, 56];  // 5 ta elementli array yaratildi, 3 ta qiymat berildi, qolganlari bo'sh
+chiqar(a);  // Arrayni chiqaradi, natija: [12, 34, 56, <2 ta bo'sh />]
+chiqar(a[0:3]); //bu arrayning 0 - elementidan 3-elementigacha elementlarni qirqib sizga array qaytaradi.
+```
+```
+[12, 34, 56, <2 ta bo'sh />]
+[12, 34, 56, <1 ta bo'sh />]
+```
 ### Izohlar
 
 - **Arrayni yaratish**: `a[5] := [12, 34, 56];` arrayni yaratishda 5 elementli bo'ladi. 3 ta qiymat berilgan va qolgan 2 ta element bo'sh qoldirilgan.

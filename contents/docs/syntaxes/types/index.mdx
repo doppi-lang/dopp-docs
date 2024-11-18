@@ -41,9 +41,16 @@ chiqar(raqam.raqamniFormatlash(2));    // "1,234.57"
 doim satr := "Hayotjon";
 chiqar(satr.uzunlik());          // 8
 chiqar(satr.kesish(0, 4));       // "Hayo"
+// kesish uchun ikkinchi variant ham mavjud
+chiqar(satr[0:-3]); 
+// yoki
+chiqar(satr[0:3]); //shaklda yoziladi
+
 chiqar(satr.teskari());          // "nojyotyaH"
 chiqar("123".almashSonga());     // 123
 chiqar(satr.massivga());         // ["H", "a", "y", "o", "t", "j", "o", "n"]
+chiqar(satr[0]); // H 
+
 ```
 
 ---
