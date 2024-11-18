@@ -19,12 +19,8 @@ export const NAVLINKS = [
     href: "/blog",
   },
   {
-    title: "Examples",
-    href: "#",
-  },
-  {
-    title: "Guides",
-    href: "#",
+    title: "Misollar",
+    href: "/examples",
   },
   {
     title: "Community",

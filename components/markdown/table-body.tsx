@@ -25,8 +25,8 @@ export const table: TableSection[] = [
 const TableComponent: React.FC = () => {
     return (
         <>
-            <table className="w-full text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead>
+            <table key={"index-uniq"} className="w-full text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead key={"index-uniq"} className="">
                     <tr>
                         <th scope="col" className="px-6 text-xl py-3">
                             Tomonlari
@@ -37,7 +37,7 @@ const TableComponent: React.FC = () => {
                     </tr>
                 </thead>
                 {table.map((item, index) => (
-                    <>
+                    <React.Fragment key={index}>
                         <thead key={"index-" + index} className="text-xs text-gray-700 uppercase bg-light-bg dark:bg-secondary-bg dark:text-gray-400">
                             <tr className="w-full">
                                 <th
@@ -61,16 +61,16 @@ const TableComponent: React.FC = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <React.Fragment key={index}>
+                            <React.Fragment >
                                 {item.data.map((data, idx) => (
-                                    <tr key={idx} className="bg-white border-b dark:bg-background dark:border-gray-700">
+                                    <tr key={"index-" + index} className="bg-white border-b dark:bg-background dark:border-gray-700">
                                         <td className="px-6 py-4 font-medium text-gray-900 items-center align-middle dark:text-white">{data.title}</td>
                                         <td className="px-6 py-4">{data.description}</td>
                                     </tr>
                                 ))}
                             </React.Fragment>
                         </tbody>
-                    </>
+                    </React.Fragment>
                 ))}
 
             </table >

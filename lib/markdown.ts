@@ -217,3 +217,39 @@ export async function getBlogForSlug(slug: string) {
     return undefined;
   }
 }
+export async function getExampleForSlug(slug: string) {
+  const exampleFile = path.join(process.cwd(), "/contents/examples/", `${slug}.mdx`);
+  try {
+    const rawMdx = await fs.readFile(exampleFile, "utf-8");
+    return await parseMdx<BlogMdxFrontmatter>(rawMdx);
+  } catch {
+    return undefined;
+  }
+}
+export async function getAllExamplesStaticPaths() {
+  try {
+    const exampleFolder = path.join(process.cwd(), "/contents/examples/");
+    const res = await fs.readdir(exampleFolder);
+    return res.map((file) => file.split(".")[0]);
+  } catch (err) {
+    console.log(err);
+  }
+}
+export async function getAllExamples() {
+  const exampleFolder = path.join(process.cwd(), "/contents/examples/");
+  const files = await fs.readdir(exampleFolder);
+  const uncheckedRes = await Promise.all(
+    files.map(async (file) => {
+      if (!file.endsWith(".mdx")) return undefined;
+      const filepath = path.join(process.cwd(), `/contents/examples/${file}`);
+      const rawMdx = await fs.readFile(filepath, "utf-8");
+      return {
+        ...justGetFrontmatterFromMD<BlogMdxFrontmatter>(rawMdx),
+        slug: file.split(".")[0],
+      };
+    })
+  );
+  return uncheckedRes.filter((it) => !!it) as (BlogMdxFrontmatter & {
+    slug: string;
+  })[];
+}

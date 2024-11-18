@@ -5,6 +5,7 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Footer } from "@/components/footer";
 import "@/styles/globals.css";
+import { ArrowUp } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Doppi Lang",
@@ -12,18 +13,26 @@ export const metadata: Metadata = {
   description:
     "Bu vebsayt orqali , o'zbek tilida yoziluvchi dasturlash tillaridan biri doppi lang haqida tanishim olasz",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // action to top and bottom position absolute button
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} font-regular antialiased`}
         suppressHydrationWarning
       >
+        <link rel="icon" href="/doppi-icon.png" />
+
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

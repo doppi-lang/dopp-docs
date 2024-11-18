@@ -30,6 +30,7 @@ export function Footer() {
         <div className="gap-4 items-center hidden md:flex">
           <FooterButtons />
         </div>
+        {/* TODO footerni almashtirish kerak */}
       </div>
     </footer>
   );

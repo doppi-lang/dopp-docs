@@ -7,7 +7,7 @@ export type EachRoute = {
 
 export const ROUTES: EachRoute[] = [
   {
-    title: "Getting Started",
+    title: "O'qishni Boshlash",
     href: "/getting-started",
     noLink: true,
     items: [
@@ -16,45 +16,38 @@ export const ROUTES: EachRoute[] = [
         title: "O'rnatish",
         href: "/installation",
       },
-      { title: "Quick Start Guide", href: "/quick-start-guide" },
-      {
-        title: "Project Structure",
-        href: "/project-structure",
-      },
-      {
-        title: "Components",
-        href: "/components",
-        items: [
-          { title: "Stepper", href: "/stepper" },
-          { title: "Tabs", href: "/tabs" },
-          { title: "Note", href: "/note" },
-          { title: "Code Block", href: "/code-block" },
-          { title: "Image & Link", href: "/image-link" },
-          { title: "Custom", href: "/custom" },
-        ],
-      },
-      { title: "Themes", href: "/themes" },
-      {
-        title: "Customize",
-        href: "/customize",
-      },
+      { title: "Extension O'rnatish", href: "/extension-install" },
     ],
   },
   {
     title: "Sintaksis",
-    href: "/syntax",
+    href: "/syntaxes",
     noLink: true,
     items: [
       { title: "variables", href: "/variables" },
       { title: "functions", href: "/functions" },
       { title: "conditionals", href: "/conditionals" },
       { title: "loops", href: "/loops" },
+      { title: "increment & decrement", href: "/increment-decrement" },
       { title: "arrays", href: "/arrays" },
       { title: "objects", href: "/objects" },
       { title: "o'zgarmas funksiyalar", href: "/expect-functions" },
-      { title: "Switch & Case", href: "switch-case" }
+      { title: "Switch & Case", href: "/switch-case" },
+      { title: "Turlar", href: "/types" },
+      { title: "Matematik Kutubxonalar", href: "/math-libs" },
     ]
   },
+  {
+    title: "Standart Kutubxonalar",
+    href: "/standart-libs",
+    noLink: true,
+    items: [
+      {
+        title: "K/CH (kiriti va chiqarish)",
+        href: "/io",
+      },
+    ]
+  }
 ];
 
 type Page = { title: string; href: string };
