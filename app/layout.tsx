@@ -5,13 +5,31 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Footer } from "@/components/footer";
 import "@/styles/globals.css";
-import { ArrowUp } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Doppi Lang",
-  metadataBase: new URL("https://doppi-lang.com"),
+  metadataBase: new URL("https://doppi-lang.vercel.app"),
   description:
     "Bu vebsayt orqali , o'zbek tilida yoziluvchi dasturlash tillaridan biri doppi lang haqida tanishim olasz",
+  icons: {
+    icon: "/doppi-icon.png",
+  },
+  openGraph: {
+    title: "Doppi Lang",
+    description:
+      "Bu vebsayt orqali , o'zbek tilida yoziluvchi dasturlash tillaridan biri doppi lang haqida tanishim olasz",
+    url: "https://doppi-lang.vercel.app",
+    siteName: "Doppi Lang",
+    images: [
+      {
+        url: "https://i.postimg.cc/4xjvcpgJ/doppi-brand.png",
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "en-US",
+    type: "website",
+  },
 };
 export default function RootLayout({
   children,
@@ -31,8 +49,6 @@ export default function RootLayout({
         className={`${GeistSans.variable} ${GeistMono.variable} font-regular antialiased`}
         suppressHydrationWarning
       >
-        <link rel="icon" href="/doppi-icon.png" />
-
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
