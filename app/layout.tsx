@@ -8,7 +8,7 @@ import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Doppi Lang",
-  metadataBase: new URL("www.doppi-lang.uz"),
+  metadataBase: new URL("https://doppi-lang.uz"),
   description:
     "Bu vebsayt orqali , o'zbek tilida yoziluvchi dasturlash tillaridan biri doppi lang haqida tanishim olasz",
   icons: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "Doppi Lang",
     description:
       "Bu vebsayt orqali , o'zbek tilida yoziluvchi dasturlash tillaridan biri doppi lang haqida tanishim olasz",
-    url: "www.doppi-lang.uz",
+    url: "https://doppi-lang.uz",
     siteName: "Doppi Lang",
     images: [
       {
