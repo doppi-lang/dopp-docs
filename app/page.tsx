@@ -17,7 +17,7 @@ export default function Home() {
         <MoveUpRightIcon className="w-4 h-4 font-extrabold" />
       </Link>
       <h1 className="text-3xl font-bold mb-4 sm:text-6xl">
-        Chet tilidan muammo bormi ?, dasturlash tilini o'rganishda muammo duch kelmoqdamiz ? unda bu til siz uchun
+        Chet tilidan muammo bormi ?, dasturlash tilini o'rganishda muammoga duch kelmoqdamisiz ? unda bu til siz uchun
       </h1>
       <p className="mb-8 sm:text-xl max-w-[800px] text-muted-foreground">
         O'zbek lug'atidan foydalangan holda ishlab chiqilgan dasturlash tillaridan biri doppi lang.
