@@ -27,9 +27,9 @@ Bubble Sort algoritmasini Doppi dasturlash tilida yozish orqali ro'yxatdagi elem
 funksiya bubbleSort(array){
     yarat i, j, temp;
     // o'zgaruvchi avvaldan yaratilgan bo'lishi shart
-    takrorla (i:=0, i<array.uzunlik, i:=i+1) {
+    takrorla (i:=0, i<array.uzunlik, i++) {
         // o'zgaruvchi avvaldan yaratilgan bo'lishi shart
-        takrorla (j:=0, j<array.uzunlik-i-1, j:=j+1) {
+        takrorla (j:=0, j<array.uzunlik-i-1, j++) {
             agar(array[j]>array[j+1]){
                 temp:=array[j];
                 array[j]:=array[j+1];

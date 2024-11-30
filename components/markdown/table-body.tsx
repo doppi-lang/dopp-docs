@@ -63,7 +63,7 @@ const TableComponent: React.FC = () => {
                         <tbody>
                             <React.Fragment >
                                 {item.data.map((data, idx) => (
-                                    <tr key={"index-" + index} className="bg-white border-b dark:bg-background dark:border-gray-700">
+                                    <tr key={"index-" + idx} className="bg-white border-b dark:bg-background dark:border-gray-700">
                                         <td className="px-6 py-4 font-medium text-gray-900 items-center align-middle dark:text-white">{data.title}</td>
                                         <td className="px-6 py-4">{data.description}</td>
                                     </tr>

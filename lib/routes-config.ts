@@ -35,6 +35,7 @@ export const ROUTES: EachRoute[] = [
       { title: "Switch & Case", href: "/switch-case" },
       { title: "Turlar", href: "/types" },
       { title: "Matematik Kutubxonalar", href: "/math-libs" },
+      { title:"Sinflar bilan ishlash", href:"/classes"},
     ]
   },
   {

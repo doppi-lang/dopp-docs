@@ -1,0 +1,225 @@
+---
+
+title: Sinflar bilan ishlash va ularning metodlari  
+description: Doppi dasturlash tilida sinflarni yaratish, ularning konstruktorlari va metodlari bilan ishlashni o'rganing.
+
+---
+
+## Sinflarni Yaratish va Ulardan Foydalanish
+
+Doppi dasturlash tilida sinflar bilan ishlash obyektga yo'naltirilgan dasturlash (OOP) paradigmasini qo'llash imkonini beradi. Sinflarni yaratishda `Sinf` kalit so'zi ishlatiladi.
+
+---
+
+### Sinfni Yaratish
+
+Doppi tilida sinfni yaratish uchun quyidagi sintaksisdan foydalaniladi:
+
+```js
+Sinf SinfNomi {
+    yaratuvchi(parametrlar) {
+        // Konstruktor kodi
+    };
+
+    funksiya metodNomi(parametrlar) {
+        // Metod kodi
+    };
+};
+```
+
+---
+
+### Misol 1: Oddiy Sinf Yaratish
+
+```js
+Sinf Avtomobil {
+    yaratuvchi(nomi, rangi) {
+        ushbu.nomi := nomi;
+        ushbu.rangi := rangi;
+    };
+
+    funksiya ma'lumotlar() {
+        chiqar("Avtomobil nomi: ", ushbu.nomi);
+        chiqar("Avtomobil rangi: ", ushbu.rangi);
+    };
+};
+```
+
+**Ushbu sinfni qanday ishlatamiz:**
+
+```js
+yarat avtomobil := Avtomobil("Tesla", "Oq");
+avtomobil.ma'lumotlar();
+```
+
+**Natija:**
+```
+Avtomobil nomi: Tesla  
+Avtomobil rangi: Oq
+```
+
+---
+
+### Sinfga Qo'shimcha Metodlar Qo'shish
+
+Sinf metodlari obyektga tegishli operatsiyalarni bajarish uchun ishlatiladi.
+
+```js
+Sinf Kalkulyator {
+    yaratuvchi(boshlangichNatija) {
+        ushbu.natija := boshlangichNatija;
+    };
+
+    funksiya qosh(son) {
+        ushbu.natija := ushbu.natija + son;
+    };
+
+    funksiya natijaniOlibKel() {
+        chiqar("Natija: ", ushbu.natija);
+        ushbu.natija;
+    };
+};
+```
+
+**Ushbu sinfni qanday ishlatamiz:**
+
+```js
+yarat kalkulyator := Kalkulyator(10);
+kalkulyator.qosh(5);
+kalkulyator.natijaniOlibKel();
+```
+
+**Natija:**
+```
+Natija: 15
+```
+
+---
+
+### Sinf va Xususiyatlarning Himoyasi
+
+Doppi tilida sinf xususiyatlarini himoya qilish uchun `ximoya` kalit so'zidan foydalaniladi.
+
+```js
+Sinf BankHisobi {
+    ximoya balans := 0;
+
+    yaratuvchi(boshlangichBalans) {
+        ushbu.balans := boshlangichBalans;
+    };
+
+    funksiya pulQosh(miqdor) {
+        agar (miqdor > 0) {
+            ushbu.balans := ushbu.balans + miqdor;
+            chiqar("Balans yangilandi: ", ushbu.balans);
+        } aks {
+            chiqar("Xato: Miqdor manfiy bo'lishi mumkin emas.");
+        };
+    };
+
+    funksiya balansniOlibKel() {
+        chiqar("Balans: ", ushbu.balans);
+        ushbu.balans;
+    };
+};
+```
+
+---
+
+### Sinfning Qulayliklari
+
+1. **Obyektga yo'naltirilgan dasturlash:** Sinflar yordamida ma'lumotlar va metodlarni birlashtirib ishlatish mumkin.
+2. **Qayta foydalanish:** Sinfni bir marta yozib, uni ko'p joyda ishlatish mumkin.
+3. **Himoyalash:** `ximoya` orqali xususiyatlarni to'g'ridan-to'g'ri o'zgartirishdan saqlash mumkin.
+
+---
+
+### Tabs orqali Taqqoslash
+
+<Tabs defaultValue="doppi" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="doppi">Doppi</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+    <TabsTrigger value="typescript">TypeScript</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="doppi">
+    ```js
+    Sinf Avtomobil {
+        yaratuvchi(nomi, rangi) {
+            ushbu.nomi := nomi;
+            ushbu.rangi := rangi;
+        };
+
+        funksiya ma'lumotlar() {
+            chiqar("Avtomobil nomi: ", ushbu.nomi);
+            chiqar("Avtomobil rangi: ", ushbu.rangi);
+        };
+    };
+
+    yarat avtomobil := Avtomobil("Tesla", "Qora");
+    avtomobil.ma'lumotlar();
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    class Avtomobil {
+        String nomi;
+        String rangi;
+
+        Avtomobil(String nomi, String rangi) {
+            this.nomi = nomi;
+            this.rangi = rangi;
+        }
+
+        void ma'lumotlar() {
+            System.out.println("Avtomobil nomi: " + this.nomi);
+            System.out.println("Avtomobil rangi: " + this.rangi);
+        }
+    }
+
+    public static void main(String[] args) {
+        Avtomobil avtomobil = new Avtomobil("Tesla", "Qora");
+        avtomobil.ma'lumotlar();
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="typescript">
+    ```typescript
+    class Avtomobil {
+        constructor(public nomi: string, public rangi: string) {}
+
+        ma'lumotlar() {
+            console.log("Avtomobil nomi:", this.nomi);
+            console.log("Avtomobil rangi:", this.rangi);
+        }
+    }
+
+    const avtomobil = new Avtomobil("Tesla", "Qora");
+    avtomobil.ma'lumotlar();
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    class Avtomobil:
+        def __init__(self, nomi, rangi):
+            self.nomi = nomi
+            self.rangi = rangi
+
+        def ma'lumotlar(self):
+            print("Avtomobil nomi:", self.nomi)
+            print("Avtomobil rangi:", self.rangi)
+
+    avtomobil = Avtomobil("Tesla", "Qora")
+    avtomobil.ma'lumotlar()
+    ```
+  </TabsContent>
+</Tabs>
+
+<Note type="success">
+Doppi dasturlash tilida sinflar yordamida kodni yanada tartibli va qulayroq qilish mumkin. Hozirgi kunda yana qo'shimcha imkoniyatlar qo'shilib bormoqda.
+</Note>
